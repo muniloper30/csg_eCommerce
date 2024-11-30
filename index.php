@@ -8,6 +8,7 @@ session_start(); // Iniciar sesión
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/styles.css?v=<?php echo time(); ?>">
 
     <title>Csg Tienda</title>
@@ -19,9 +20,9 @@ session_start(); // Iniciar sesión
             <img src="./assets/images/logoCsgWeb.png" id="logo" alt="logocsg">
         </a>
         <!-- Botón para abrir el menú de hamburguesa en dispositivos móviles -->
-        <button id="abrir" class="btn-hamburger">Abrir</button>
+        <button id="abrir" class="btn-hamburger"><i class="bi bi-list"></i></button>
         <nav id="nav" class="nav"> <!-- Barra de navegación -->
-            <button id="cerrar" class="btn-closeHamburger">Cerrar</button>
+            <button id="cerrar" class="btn-closeHamburger"><i class="bi bi-x-lg"></i></button>
             <div>
                 <a data-traduccion="inicio" href="./index.php">Inicio</a>
                 <a data-traduccion="productos" href="./productos.php">Productos</a>
