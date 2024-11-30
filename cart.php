@@ -28,7 +28,6 @@ $productos_en_carrito = array_filter($productos, function ($producto) use ($carr
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./css/index.css?"/>
     <link rel="stylesheet" href="./css/styles.css?v=<?php echo time(); ?>">
     <script src="./js/cookies.js"></script> <!-- Cargar cookies.js -->
     <script src="./js/traducciones.js"></script> <!-- Cargar traducciones.js -->

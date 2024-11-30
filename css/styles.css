@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-acento: #ff0707;
     --color-acento-claro: #ff4f4f;
     --color-texto: #ffffff;
@@ -23,12 +23,12 @@ body.dark {
     color: white;
 }
 
-h3, p{
+h3, p {
     margin: 5px 0;
     color: var(--color-texto);
 }
 
-button{
+button {
     background-color: var(--color-acento-claro);
     color: var(--color-texto);
     border: none;
@@ -38,12 +38,23 @@ button{
     margin-bottom: 10px;
 }
 
-button:hover{
+button:hover {
     background-color: var(--color-acento);
 }
 
+main {
+    background-color: rgba(105, 104, 104, 0.58);
+    border-radius: 10px 10px;
+    padding: 20px 100px;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-
+main h1 {
+    color: var(--color-texto);
+}
 
 header {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.104);
@@ -53,8 +64,6 @@ header {
     margin: 20px 20px;
 }
 
-
-
 #container-idioma {
     display: flex;
     justify-content: center;
@@ -62,10 +71,7 @@ header {
     gap: 10px;
 }
 
-
-
-
-#btn-spanish{
+#btn-spanish, #btn-english, #btn-dark, #btn-white {
     background-color: var(--color-acento-claro);
     color: var(--color-texto);
     border: none;
@@ -76,62 +82,14 @@ header {
     margin-bottom: 10px;
 }
 
-#btn-spanish:hover{
+#btn-spanish:hover, #btn-english:hover, #btn-dark:hover, #btn-white:hover {
     background-color: var(--color-acento);
 }
-
-#btn-english{
-    background-color: var(--color-acento-claro);
-    color: var(--color-texto);
-    border: none;
-    font-size: 11px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-#btn-english:hover{
-    background-color: var(--color-acento);
-}
-
-#btn-dark{
-    background-color: var(--color-acento-claro);
-    color: var(--color-texto);
-    border: none;
-    font-size: 11px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-#btn-dark:hover{
-    background-color: var(--color-acento);
-}
-
-#btn-white{
-    background-color: var(--color-acento-claro);
-    color: var(--color-texto);
-    border: none;
-    font-size: 11px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-#btn-white:hover{
-    background-color: var(--color-acento);
-}
-
 
 a {
     text-decoration: none;
     color: var(--color-texto);
 }
-
-
 
 a:hover:not(#cart:hover) {
     color: var(--color-acento);
@@ -148,15 +106,14 @@ header nav {
     gap: 20px;
 }
 
-
-header nav div{
+header nav div {
     display: flex;
     align-items: center;
     gap: 20px;
-    position:relative
+    position: relative;
 }
 
-#cuenta-carrito{
+#cuenta-carrito {
     background-color: var(--color-acento);
     border-radius: 100%;
     display: inline-block;
@@ -167,30 +124,119 @@ header nav div{
     position: absolute;
 }
 
-
-#cuenta-carrito:hover{
+#cuenta-carrito:hover {
     color: var(--color-texto);
 }
 
-footer{
+footer {
     text-align: center;
     box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.104);
     margin-top: auto;
     color: var(--color-texto);
 }
 
-/*MODOS OSCUROS*/
+#productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tarjeta-producto {
+    max-width: 150px;
+    text-align: center;
+    background-color: rgba(105, 104, 104, 0.226);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.104);
+    padding: 10px;
+    border-radius: 5px 5px;
+    transition: 200ms;
+}
+
+.tarjeta-producto:hover {
+    translate: 0 -10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.404);
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    aspect-ratio: 1.5;
+}
+
+/* MODOS OSCUROS */
 
 body.dark-mode header {
-    background-color: #222222; /* Oscuro */
+    background-color: #222; /* Oscuro */
     color: #fff;
 }
 
 body.dark-mode main {
-    background-color: #222222; /* Oscuro */
+    background-color: #444; /* Oscuro */
     color: #fff;
 }
 
 body.dark-mode {
     background-image: url('../assets/images/bg-cesar-fondo.png'); /* Ruta de tu imagen */
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 20px;
+    }
+
+    header nav {
+        margin: 0 20px;
+    }
+
+    /* Hacer que la barra de navegación se apile en pantallas pequeñas */
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header nav div {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    header nav a {
+        padding: 10px 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    /* Agregar un botón de menú hamburguesa */
+    .hamburger-menu {
+        display: block;
+        background-color: var(--color-acento);
+        color: var(--color-texto);
+        border: none;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none; /* Escondemos los enlaces de navegación por defecto */
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    /* Mostrar el botón hamburguesa solo en pantallas pequeñas */
+    @media (max-width: 768px) {
+        .hamburger-menu {
+            display: block;
+        }
+    }
 }
