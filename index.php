@@ -9,19 +9,19 @@ session_start(); // Iniciar sesión
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/styles.css?v=<?php echo time(); ?>">
-    <script src="./js/cookies.js"></script> <!-- Cargar cookies.js -->
-    <script src="./js/traducciones.js"></script> <!-- Cargar traducciones.js -->
-    <script src="./js/index.js"></script>
-    <script src="https://kit.fontawesome.com/f0d1e02054.js" crossorigin="anonymous"></script>
+
     <title>Csg Tienda</title>
 </head>
 
 <body>
     <header>
-        <nav>
-            <a href="./index.php">
-                <img src="./assets/images/logoCsgWeb.png" id="logo" alt="logocsg">
-            </a>
+        <a href="./index.php">
+            <img src="./assets/images/logoCsgWeb.png" id="logo" alt="logocsg">
+        </a>
+        <!-- Botón para abrir el menú de hamburguesa en dispositivos móviles -->
+        <button id="abrir" class="btn-hamburger">Abrir</button>
+        <nav id="nav" class="nav"> <!-- Barra de navegación -->
+            <button id="cerrar" class="btn-closeHamburger">Cerrar</button>
             <div>
                 <a data-traduccion="inicio" href="./index.php">Inicio</a>
                 <a data-traduccion="productos" href="./productos.php">Productos</a>
@@ -80,6 +80,14 @@ session_start(); // Iniciar sesión
     <footer>
         <p data-traduccion="footer1">© 2024 Csg Tienda. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="./js/cookies.js"></script> <!-- Cargar cookies.js -->
+    <script src="./js/traducciones.js"></script> <!-- Cargar traducciones.js -->
+    <script src="./js/index.js"></script>
+    <script src="./js/index.js?v=<?php echo time(); ?>"></script>
+    <script src="https://kit.fontawesome.com/f0d1e02054.js" crossorigin="anonymous"></script>
 </body>
+
+
 
 </html>

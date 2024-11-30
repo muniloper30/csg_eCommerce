@@ -29,19 +29,21 @@ $productos_en_carrito = array_filter($productos, function ($producto) use ($carr
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/styles.css?v=<?php echo time(); ?>">
-    <script src="./js/cookies.js"></script> <!-- Cargar cookies.js -->
-    <script src="./js/traducciones.js"></script> <!-- Cargar traducciones.js -->
-    <script src="./js/cart.js"></script>
+
+    
     <script src="https://kit.fontawesome.com/f0d1e02054.js" crossorigin="anonymous"></script>
     <title>Carrito</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="./index.php">
-                <img src="./assets/images/logoCsgWeb.png" id="logo" alt="logocsg">
-            </a>
+<header>
+        <a href="./index.php">
+            <img src="./assets/images/logoCsgWeb.png" id="logo" alt="logocsg">
+        </a>
+        <!-- Botón para abrir el menú de hamburguesa en dispositivos móviles -->
+        <button id="abrir" class="btn-hamburger">Abrir</button>
+        <nav id="nav" class="nav"> <!-- Barra de navegación -->
+            <button id="cerrar" class="btn-closeHamburger">Cerrar</button>
             <div>
                 <a data-traduccion="inicio" href="./index.php">Inicio</a>
                 <a data-traduccion="productos" href="./productos.php">Productos</a>
@@ -51,8 +53,14 @@ $productos_en_carrito = array_filter($productos, function ($producto) use ($carr
                     <span id="cuenta-carrito">
                         <?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>
                     </span>
-
                 </a>
+                <!-- Sección para seleccionar idioma y tema -->
+                <div id="preferencias">
+                    <button id="btnEspañol">Español</button>
+                    <button id="btnIngles">Inglés</button>
+                    <button id="btnModoOscuro">Modo Oscuro</button>
+                    <button id="btnModoClaro">Modo Claro</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -84,8 +92,15 @@ $productos_en_carrito = array_filter($productos, function ($producto) use ($carr
     </main>
 
     <footer>
-    <p data-traduccion="footer1">© 2024 Csg Tienda. Todos los derechos reservados.</p>
+        <p data-traduccion="footer1">© 2024 Csg Tienda. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="./js/cookies.js"></script> <!-- Cargar cookies.js -->
+    <script src="./js/traducciones.js"></script> <!-- Cargar traducciones.js -->
+    <script src="./js/index.js"></script>
+    <script src="./js/index.js?v=<?php echo time(); ?>"></script>
+    <script src="https://kit.fontawesome.com/f0d1e02054.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
