@@ -75,6 +75,43 @@ button:hover {
   display: none;
 }
 
+#abrir {
+  padding: 0.2rem;
+  margin-left: 2rem;
+}
+
+#abrir:hover {
+  background-color: var(--color-acento);
+  border-radius: 5px;
+  color: var(--color-texto);
+}
+
+#abrir  i {
+  font-size: 1rem;
+}
+
+#abrir i:hover {
+  color: var(--color-texto);
+  font-size: 1.2rem;
+}
+
+#cerrar {
+  background-color: transparent;
+}
+
+#cerrar:hover {
+  background-color: transparent;
+  color: var(--color-texto);
+}
+
+#cerrar i {
+  font-size: 1rem;
+}
+
+#cerrar i:hover {
+  font-size: 1.2rem;
+}
+
 /*Media queries para que el nav se oculte en pantallas pequeñas y se muestre el botón de menú de hamburguesa*/
 @media screen and (max-width: 1044px) {
   header #preferencias {
@@ -95,16 +132,18 @@ button:hover {
     visibility: hidden;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
-    gap: 1rem;
-    position: absolute;
+    gap: 3rem;
+    position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
     background-color: #1c1c1c;
-    box-shadow: 0 0 0 100vw rgba(37, 35, 35, 0.678);
-    padding: 1.5rem;
+    background-size: cover;
+    box-shadow: 0 0 0 100vw rgba(37, 35, 35, 0.192);
+    height: 100%;
+    width: 100vw;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
   }
 
   .nav.visible {
