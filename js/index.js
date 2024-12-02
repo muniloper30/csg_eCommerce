@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function cambiarIdioma(idioma) {
       setCookie("idioma", idioma, 30); // La cookie durará 30 días
       actualizarTexto(idioma);
+      actualizarTextoVacio(idioma)
+      actualizarTextoCarritoCompras(idioma)
     }
   
     // Función para actualizar los textos en la página según el idioma
@@ -32,8 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector('[data-traduccion="productos"]').innerText = traduccion.productos;
       document.querySelector('[data-traduccion="contacto"]').innerText = traduccion.contacto;
       document.querySelector('[data-traduccion="footer1"]').innerText = traduccion.footer1;
-      document.querySelector('[data-traduccion="carritoCompras"]').innerText = traduccion.carritoCompras;
-  
+      
+      
+      
       // Cambiar los botones de agregar al carrito
       const botonesCarrito = document.querySelectorAll("button[type='submit']");
       botonesCarrito.forEach((button) => {
@@ -59,6 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const elementoVacio = document.querySelector('[data-traduccion="vacio"]');
       if (elementoVacio) {
         elementoVacio.innerText = textoVacio;
+      }
+    }
+
+    function actualizarTextoCarritoCompras(idioma){
+      const textoCarritoCompras = traducciones[idioma].carritoCompras;
+      const elementoCarritoCompras = document.querySelector('[data-traduccion="carritoCompras"]');
+      if (elementoCarritoCompras) {
+        elementoCarritoCompras.innerText = textoCarritoCompras;
       }
     }
   

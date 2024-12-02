@@ -84,9 +84,10 @@ session_start(); // Iniciar sesión
 
     <script src="./js/cookies.js"></script> <!-- Cargar cookies.js -->
     <script src="./js/traducciones.js"></script> <!-- Cargar traducciones.js -->
-    <script src="./js/index.js"></script>
     <script src="./js/index.js?v=<?php echo time(); ?>"></script>
     <script src="https://kit.fontawesome.com/f0d1e02054.js" crossorigin="anonymous"></script>
+
+
 </body>
 
 
